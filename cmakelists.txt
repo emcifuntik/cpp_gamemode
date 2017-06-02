@@ -3,7 +3,7 @@ cmake_policy(VERSION 2.8)
 
 project(cpp_example)
 
-set(SOURCE_LIB main.cpp dllmain.cpp stdafx.cpp)
+set(SOURCE_LIB main.cpp dllmain.cpp)
 set(CMAKE_MACOSX_RPATH 1)
 set(CMAKE_BUILD_TYPE Release)
 

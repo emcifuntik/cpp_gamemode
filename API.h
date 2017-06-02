@@ -109,7 +109,7 @@ public:
 	bool getBool() { if (type == M_BOOL) return *(bool*)_val; return false; };
 	double getDouble() { if (type == M_DOUBLE) return *(double*)_val; return 0; };
 	unsigned long getULong() { if (type == M_ULONG) return *(unsigned long*)_val; return 0; };
-	MArray getArray() { if (type == M_ARRAY) return *(MArray*)_val; };
+    MArray getArray() { if (type == M_ARRAY) return *(MArray*)_val; return MArray(); };
 
 	bool isString() { return type == M_STRING; };
 	bool isInt() { return type == M_INT; };
@@ -162,6 +162,7 @@ public:
 				return MValue(0);
 			}
 		}
+        return MValue(0);
 	};
 
 	char type;
