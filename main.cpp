@@ -1,17 +1,16 @@
-
 #include "stdafx.h"
 
 API * API::instance = nullptr;
 
 extern "C"
 {
-	__declspec(dllexport) bool Validate(API * api)
+	callback bool Validate(API * api)
 	{
 		API::Set(api);
 		return true;
 	}
 
-	__declspec(dllexport) void OnModuleInit()
+	callback void OnModuleInit()
 	{
 		API::Get().Print("Simple module has been successfully loaded!");
 
@@ -25,7 +24,7 @@ extern "C"
 		API::Get().Print("All cars were loaded!");
 	}
 
-	__declspec(dllexport) bool OnPlayerConnect(long playerid)
+	callback bool OnPlayerConnect(long playerid)
 	{
 		/*std::stringstream message;
 		message << "Player " << API::Get().GetPlayerName(playerid) << " joined the server!";
@@ -39,13 +38,13 @@ extern "C"
 		return true;
 	}
 
-	__declspec(dllexport) bool OnServerCommand(std::string command)
+	callback bool OnServerCommand(std::string command)
 	{
 
 		return true;
 	}
 
-	__declspec(dllexport) bool OnPlayerDisconnect(long playerid, int reason)
+	callback bool OnPlayerDisconnect(long playerid, int reason)
 	{
 		std::stringstream message;
 		message << "Player  " << API::Get().GetPlayerName(playerid) << " left the server(" << ((reason == 1) ? "Disconnected" : "Timeout") << ")!";
@@ -53,19 +52,19 @@ extern "C"
 		return true;
 	}
 
-	__declspec(dllexport) bool OnPlayerUpdate(long playerid)
+	callback bool OnPlayerUpdate(long playerid)
 	{
 
 		return true;
 	}
 
-	__declspec(dllexport) bool OnPlayerCommand(long playerid, const char * command)
+	callback bool OnPlayerCommand(long playerid, const char * command)
 	{
 
 		return true;
 	}
 
-	__declspec(dllexport) bool OnPlayerText(long playerid, const char * text)
+	callback bool OnPlayerText(long playerid, const char * text)
 	{
 
 		return true;
