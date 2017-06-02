@@ -5,5 +5,6 @@ project(cpp_example)
 
 set(SOURCE_LIB main.cpp dllmain.cpp stdafx.cpp)
 set(CMAKE_MACOSX_RPATH 1)
+set(CMAKE_BUILD_TYPE Release)
 
 add_library(gamemode SHARED ${SOURCE_LIB})
