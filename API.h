@@ -2,14 +2,6 @@
 #include <string>
 #include "../Shared/CVector3.h"
 
-enum {
-	M_STRING,
-	M_INT,
-	M_BOOL,
-	M_DOUBLE,
-	M_ULONG
-};
-
 class APIBase {
 public:
 	virtual void LoadClientScript(std::string name, char* buffer, size_t size) = 0;
