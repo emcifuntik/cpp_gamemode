@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-API * API::instance = nullptr;
+API * API::instance = 0;
 
 extern "C"
 {
